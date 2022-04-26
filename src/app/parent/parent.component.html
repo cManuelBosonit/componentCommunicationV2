@@ -2,15 +2,32 @@
     <h1>Parent</h1>
     <div class="workZone">
         <div class="parentMessage">
-            <p>message: </p>
+            <p>message: {{messageFromChild | uppercase }}</p>
         </div>        
         <div class="parentButtons">           
-            <button class="btn btn-primary m-1">Use Service</button>
-            <button class="btn btn-primary m-1">Use Input Property</button>
-            <button class="btn btn-primary m-1">Use Observable</button>
+            <button 
+                    class="btn btn-primary m-1"
+                    (click)="parentService()"
+                    >
+                    Use Service
+            </button>
+            <button 
+                    class="btn btn-primary m-1"
+                    (click)="changeMessage()">Use Input Property
+            </button>
+            <button 
+                    class="btn btn-primary m-1"
+                    (click)="observableParent()"
+                    >
+                    Use Observable
+            </button>
         </div>
     </div>
-    <app-child></app-child>
+    <app-child 
+                [message]="messageToChild"             
+                (messageToParen)="onReciveMessage($event)"           
+                >
+    </app-child>
 </div>
 
 
