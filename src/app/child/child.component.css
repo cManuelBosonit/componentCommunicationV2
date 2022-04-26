@@ -1,0 +1,13 @@
+.childContainer{
+    border: solid 3px rgb(0, 195, 255);
+    margin: auto;
+    padding: 0.5rem;
+}
+.childmessage{
+    display: flex;
+    justify-content: center;  
+}
+.childButtons{
+    display: flex;
+    justify-content: center;
+}

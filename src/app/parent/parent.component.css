@@ -1,0 +1,13 @@
+.parentContainer{
+    width: 100vw;
+    border: solid 3px rgb(0, 195, 255);
+    padding: 0.5rem;
+}
+.parentMessage{
+    display: flex;
+    justify-content: center;  
+}
+.parentButtons{
+    display: flex;
+    justify-content: center;
+}
