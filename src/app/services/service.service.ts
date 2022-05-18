@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ChildComponent } from '../child/child.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
+
+  childComponent!: ChildComponent
+  parentComponent!: ParentComponent
 
   messageServiceParent: string = 'parent using service';
   messageServiceChild: string = 'child using service';
@@ -16,6 +21,7 @@ export class ServiceService {
   private subjectChild: BehaviorSubject<string> = new BehaviorSubject<string>(this.messageChildObservable);
 
   constructor() { }
+
 
   sendToParent(){
     return this.messageServiceChild;

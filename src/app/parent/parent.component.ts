@@ -11,7 +11,9 @@ export class ParentComponent implements OnInit {
   messageToChild: string = '';
   messageFromChild: string = '';
 
-  constructor( private dataService: ServiceService ) { }
+  constructor( private dataService: ServiceService ) { 
+    dataService.parentComponent = this
+  }
 
   ngOnInit(): void {
   }
@@ -21,7 +23,7 @@ export class ParentComponent implements OnInit {
   }
 
   parentService(){
-    this.messageToChild = this.dataService.sendTochild();
+    this.dataService.childComponent.message = 'parent using service!!'
   }
 
   onReciveMessage(message: string){

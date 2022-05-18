@@ -12,7 +12,9 @@ export class ChildComponent implements OnInit {
   @Input() message: string = '';
   @Output() messageToParen = new EventEmitter<string>();
 
-  constructor( private dataService: ServiceService ) { }
+  constructor( private dataService: ServiceService ) {
+    dataService.childComponent = this
+   }
 
   ngOnInit(): void {
   }
@@ -22,7 +24,7 @@ export class ChildComponent implements OnInit {
   }
 
   childService(){
-    this.messageToParen.emit(this.dataService.sendToParent());
+    this.dataService.parentComponent.messageFromChild = 'child using service!!'
   } 
 
   observableChild(){
